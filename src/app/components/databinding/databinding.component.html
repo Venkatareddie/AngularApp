@@ -1,0 +1,33 @@
+<h3 class="text-center"> Lets learn data binding</h3>
+<div class="container m-2 p-2">
+
+<div>Username is: {{username}}</div>
+<div>Username is: <span [innerHTML]="username"></span></div>
+
+<img src="{{img_url}}" alt=" " width="200px"  height="150px">
+<img [src]="img_url" alt=" " width="200px" height="150px" class="mx-2">
+<img bind-src="img_url" alt=" " width="200px" height="150px" class="mx-2">
+<br />
+<div class="mx-2">1-way: <input type="text" value="{{username}}"></div>
+<div>1-Way: <input type="text" [value]="username"></div>
+<div>1-Way: <input type="text" bind-value="username"></div>
+<div>2-Way: <input type="text" [(ngModel)]="username"></div>
+<div>2-Way:<input type="text" bindon-ngModel="username"></div>
+
+<div>
+    <button class="btn btn-primary mx-2" disabled={{flag}}>Click me</button>
+    <button class="btn btn-primary mx-2" [disabled]="flag">Click me</button>
+    <button class="btn btn-primary mx-2" bind-disabled="flag">Click me</button>
+</div>
+
+<div class="mx-2">
+<button class="btn btn-success" (click)="f1()">Click me</button>
+<button class="btn btn-success" on-click="f1()">Click me</button>
+</div>
+
+
+
+
+
+
+</div>
