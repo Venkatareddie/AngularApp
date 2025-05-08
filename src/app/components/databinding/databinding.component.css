@@ -1,17 +1,25 @@
+
 table,
 th,
 td {
     border: 1px solid black;
 }
 
-/* Light theme (default) */
-body {
-    background-color: white;
-    color: black;
+div input{
+   margin-left: 10px;
 }
 
-/* Dark theme */
-body.dark {
-    background-color: #333;
-    color: white;
+div div input {
+    margin-top: 10px;
+}
+
+div button{
+    margin-top: 7px;
+    color: red;
+    margin-left: 5px;;
+    
+}
+div img{
+    margin-right: 5px;
+    
 }

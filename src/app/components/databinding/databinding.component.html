@@ -1,25 +1,25 @@
 <h3 class="text-center">Let's learn data binding</h3>
 <div class="border p-2 m-2">
-    <div>Username is: {{ username }}</div>
-    <div>Username is: <span [innerHTML]="username"></span></div>
-    
+    <div>Prime Minister : {{ prime_minister }}</div>
+    <div>Prime Minister : <span [innerHTML]="prime_minister"></span></div> <br>
 <div>
-    <img [src]="img_url" alt=" " width="200px" height="150px" class="mx-2"/>
-    <img bind-src="img_url" alt=" " width="200px" height="150px" class="mx-2"/>
+    <img [src]="img_url" alt=" " width="200px" height="150px"/>
+    <img bind-src="img_url" alt=" " width="200px" height="150px"/>
     <img src={{img_url}} alt=" " width="200px" height="150px" />
 
 
 </div>
     <br />
-    <div class="mx-2">1-way: <input type="text" [value]="username" /></div>
-    <div>1-Way: <input type="text" [value]="username" /></div>
-    <div>1-Way: <input type="text" bind-value="username" /></div>
-
-
-    <div>2-Way: <input type="text" [(ngModel)]="username" /></div>
+    <div>1-Way: <input type="text" [value]="prime_minister"/></div>
+    <div>1-Way: <input type="text" [value]="prime_minister"/></div>
+    <div>1-Way: <input type="text" bind-value="prime_minister" /></div>
+    <div>2-Way: <input type="text" [(ngModel)]="prime_minister" /></div>
+    <div>2-Way: <input type="text" bindon-ngModel="prime_minister" /></div>
 
     <div>
         <button class="btn btn-primary mx-2" [disabled]="flag">Click me</button>
+        <button class="btn btn-primary mx-2" bind-disabled="flag">Click me</button>
+        <button class="btn btn-primary mx-2" disabled={{flag}}>Click me</button>
     </div>
 
     <div class="mx-2">
@@ -106,13 +106,23 @@
         {{ buttonText }}
     </button>
 </div>
+<br>
 
+<!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
 
-<div>
-  <button (click)="toggleTheme()">
-    Toggle to {{ isDarkMode ? 'Light' : 'Dark' }} Mode
-  </button>
-</div>
+<h3>Performing operation b/w two operands with (+,-,*,/)</h3>
+
+<div>Input Number 1 : <input type="number" [(ngModel)]="number1"></div>
+<div>Input Number 2 : <input type="number" [(ngModel)]="number2"> </div>
+
+<select [(ngModel)]="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<button (click)="calculate()">=</button>
+<span>{{ result }}</span>
 
 </div>
 
