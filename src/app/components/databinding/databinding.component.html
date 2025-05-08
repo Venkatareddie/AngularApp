@@ -1,33 +1,118 @@
-<h3 class="text-center"> Lets learn data binding</h3>
-<div class="container m-2 p-2">
+<h3 class="text-center">Let's learn data binding</h3>
+<div class="border p-2 m-2">
+    <div>Username is: {{ username }}</div>
+    <div>Username is: <span [innerHTML]="username"></span></div>
+    
+<div>
+    <img [src]="img_url" alt=" " width="200px" height="150px" class="mx-2"/>
+    <img bind-src="img_url" alt=" " width="200px" height="150px" class="mx-2"/>
+    <img src={{img_url}} alt=" " width="200px" height="150px" />
 
-<div>Username is: {{username}}</div>
-<div>Username is: <span [innerHTML]="username"></span></div>
 
-<img src="{{img_url}}" alt=" " width="200px"  height="150px">
-<img [src]="img_url" alt=" " width="200px" height="150px" class="mx-2">
-<img bind-src="img_url" alt=" " width="200px" height="150px" class="mx-2">
-<br />
-<div class="mx-2">1-way: <input type="text" value="{{username}}"></div>
-<div>1-Way: <input type="text" [value]="username"></div>
-<div>1-Way: <input type="text" bind-value="username"></div>
-<div>2-Way: <input type="text" [(ngModel)]="username"></div>
-<div>2-Way:<input type="text" bindon-ngModel="username"></div>
+</div>
+    <br />
+    <div class="mx-2">1-way: <input type="text" [value]="username" /></div>
+    <div>1-Way: <input type="text" [value]="username" /></div>
+    <div>1-Way: <input type="text" bind-value="username" /></div>
+
+
+    <div>2-Way: <input type="text" [(ngModel)]="username" /></div>
+
+    <div>
+        <button class="btn btn-primary mx-2" [disabled]="flag">Click me</button>
+    </div>
+
+    <div class="mx-2">
+        <button class="btn btn-success" (click)="f1()">Click me</button>
+    </div>
+
+    <div class="p-2 mx-2">
+        <div>Addition of two numbers:</div>
+        <input [(ngModel)]="num1" />
+        <input [(ngModel)]="num2" />
+        <div>
+            Addition of two numbers {{ num1 }} and {{ num2 }} is: {{ +num1 + +num2 }}
+        </div>
+    </div>
+
+    <div class="p-2 mx-2">
+        <div>Addition of two numbers using Template Reference:</div>
+        <input #n1 id="val1" />
+        <input #n2 id="val2" />
+        <button class="btn btn-primary" (click)="addNumbers(n1.value, n2.value)">Add</button>
+        <div>Addition result is: {{ addNum }}</div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>February</td>
+            <td>$80</td>
+        </tr>
+        <tr>
+            <td [attr.colspan]="myColSpanVal">Sum: $180</td>
+        </tr>
+    </table>
+
+    <!-- Assignments: -->
+
+    <br><br>
+
+    <!-- Show/Hide Paragraph -->
+    <button (click)="f2()">Show/Hide</button>
+    <div *ngIf="f">
+        <p>Hello, {{ nm }}!</p>
+    </div>
+
+    <br><br>
+
+    <!-- Textarea with Remaining Characters -->
+    <div>
+        <textarea [(ngModel)]="message"></textarea>
+        <p>{{ message }}: {{ max_length - message.length }} characters are left</p>
+    </div>
+
+    <!-- Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph -->
+    <div>
+    <select [(ngModel)]="state">
+        <option>Florida</option>
+        <option>Texas</option>
+        <option>Michigan</option>
+    </select>
+
+    <p>Your selected state is : {{state}}</p>
+    </div>
+
+    <!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+<div class="counter">
+    <h2>Counter: {{ count }}</h2>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset</button>
+</div>
+
+<br><br>
 
 <div>
-    <button class="btn btn-primary mx-2" disabled={{flag}}>Click me</button>
-    <button class="btn btn-primary mx-2" [disabled]="flag">Click me</button>
-    <button class="btn btn-primary mx-2" bind-disabled="flag">Click me</button>
-</div>
-
-<div class="mx-2">
-<button class="btn btn-success" (click)="f1()">Click me</button>
-<button class="btn btn-success" on-click="f1()">Click me</button>
+    <input [type]="inputType" placeholder="Enter your password">
+    <button (click)="toggleInputType()">
+        {{ buttonText }}
+    </button>
 </div>
 
 
-
-
-
+<div>
+  <button (click)="toggleTheme()">
+    Toggle to {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+  </button>
+</div>
 
 </div>
+
