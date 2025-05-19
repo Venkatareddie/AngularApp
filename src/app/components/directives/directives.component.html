@@ -1,0 +1,159 @@
+<!-- directives.component.html -->
+<div class="border p-2 m-2">
+  @if (age>18) {
+  <p>Eligible for vote</p>
+  } @else{
+  <p>Not Eligible for vote</p>
+  }
+</div>
+
+<div>
+  <input type="number" [(ngModel)]="num1" />
+  @if (num1 % 2 == 0) {
+  <div>{{ num1 }} isEven</div>
+  } @if (num1 % 2 != 0) {
+  <div>{{ num1 }} is Odd</div>
+  }
+</div>
+
+<div class="border p-2 m-2">
+  <p>Switch Case</p>
+  <input type="number" [(ngModel)]="dayNum" />
+  @switch (dayNum) { @case (1) {
+  <h4>Monday</h4>
+  } @case (2) {
+  <h4>Tuesday</h4>
+  } @case (3) {
+  <h4>Wednesday</h4>
+  } @case (4) {
+  <h4>Thursday</h4>
+  } @case (5) {
+  <h4>Friday</h4>
+  } @case (6) {
+  <h4>Saturday</h4>
+  } @case (7) {
+  <h4>Sunday</h4>
+  } @default {
+  <h4>Not a Valid number</h4>
+  } }
+</div>
+<div>Month:</div>
+<div>
+  <input type="number" [(ngModel)]="month" />
+
+  @switch (month) { @case (1) {
+  <h4>January</h4>
+  } @case (2) {
+  <h4>February</h4>
+  } @case (3) {
+  <h4>March</h4>
+  } @case (4) {
+  <h4>April</h4>
+  } @case (5) {
+  <h4>May</h4>
+  } @case (6) {
+  <h4>June</h4>
+  } @case (7) {
+  <h4>July</h4>
+  } @case (8) {
+  <h4>August</h4>
+  } @case (9) {
+  <h4>September</h4>
+  } @case (10) {
+  <h4>October</h4>
+  } @case (11) {
+  <h4>November</h4>
+  } @case (12) {
+  <h4>December</h4>
+  } @default {
+  <h4>Please choose a valid month number</h4>
+  } }
+</div>
+
+<div class="border p-2 m-2">
+  @if (stateNames.length > 0) {
+  <select>
+    @for (state of stateNames; track $index) {
+    <option>{{ state }}</option>
+    }
+  </select>
+  } @else {
+  <div>No items to show</div>
+  }
+</div>
+
+<div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>SL No</th>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Role</th>
+        <th>Email</th>
+        <th>Location</th>
+        <th>Is First</th>
+        <th>Is Last</th>
+        <th>Is Even</th>
+        <th>Is Odd</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees; track employee.employeeId) {
+      <tr [style.color]="$first ? 'red' : 'green'">
+        <td>{{ $index + 1 }}</td>
+        <td>{{ employee.employeeId }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.role }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.location }}</td>
+        <td>{{ $first }}</td>
+        <td>{{ $last }}</td>
+        <td>{{ $even }}</td>
+        <td>{{ $odd }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <div>
+    <table class="table table-bordered table-striped">
+      <th>EId</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+      <tbody>
+        @for (emp of employee; track $index) {
+
+        <tr>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="border p-2 mx-2">
+    <h3>Country List Dopdown</h3>
+    <select [(ngModel)]="selectedCountry">
+      @for (country of country_list; track $index) {
+      <option>{{ country }}</option>
+      }
+    </select>
+    <div>Selected Country: {{ selectedCountry }}</div>
+  </div>
+
+  <div class="border p-2 mx-2">
+    <h3>Country List Datalist Dopdown</h3>
+    <input list="countrys" />
+    <datalist id="countrys">
+      @for (country of country_list; track $index) {
+      <option>{{ country }}</option>
+      }
+    </datalist>
+  </div>
+</div>

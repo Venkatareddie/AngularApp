@@ -1,0 +1,57 @@
+<h3 class="text-center">Products List</h3>
+<div class="container">
+  <div class="row">
+    <div class="d-flex align-items-center gap-2 m-3">
+      <!-- Search Input -->
+      <input
+        type="text"
+        placeholder="Search by category..."
+        [(ngModel)]="byName"
+        (click)="searchByItem()"
+        class="form-control"
+        style="max-width: 300px"
+      />
+
+      <!-- Sort Buttons -->
+      <button class="btn btn-outline-primary" (click)="sortAsc('asc')">
+        Asc
+      </button>
+      <button class="btn btn-outline-secondary" (click)="sortDesc('desc')">
+        Desc
+      </button>
+    </div>
+    <div class="row">
+      @for (products of productsArr | paginate: { itemsPerPage: 4, currentPage:
+      p}; track $index) {
+      <div class="col-sm-3">
+        <div class="card text-center">
+          <img
+            src="{{ products.image }}"
+            class="card-img-top"
+            alt="..."
+            height="200px"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ products.category }}</h5>
+            <p class="card-text">
+              {{ products.id }}
+            </p>
+            <p class="card-text">Product Title: {{ products.title }}</p>
+            <p class="card-text">Product Price: {{ products.price }}</p>
+            <p class="card-text">Product Rating: {{ products.rating.rate }}</p>
+            <p class="card-text text-truncate">
+              Product Description: {{ products.description }}
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="row">
+      <div class="col-sm-6 offset-4 mt-2">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

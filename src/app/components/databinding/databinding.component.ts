@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { Operator } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-databinding',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule],
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css'
 })

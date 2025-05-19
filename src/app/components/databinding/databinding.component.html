@@ -1,128 +1,130 @@
 <h3 class="text-center">Let's learn data binding</h3>
 <div class="border p-2 m-2">
-    <div>Prime Minister : {{ prime_minister }}</div>
-    <div>Prime Minister : <span [innerHTML]="prime_minister"></span></div> <br>
-<div>
+  <div>Prime Minister : {{ prime_minister }}</div>
+  <div>Prime Minister : <span [innerHTML]="prime_minister"></span></div> <br>
+  <div>
     <img [src]="img_url" alt=" " width="200px" height="150px"/>
     <img bind-src="img_url" alt=" " width="200px" height="150px"/>
     <img src={{img_url}} alt=" " width="200px" height="150px" />
 
 
-</div>
-    <br />
-    <div>1-Way: <input type="text" [value]="prime_minister"/></div>
-    <div>1-Way: <input type="text" [value]="prime_minister"/></div>
-    <div>1-Way: <input type="text" bind-value="prime_minister" /></div>
-    <div>2-Way: <input type="text" [(ngModel)]="prime_minister" /></div>
-    <div>2-Way: <input type="text" bindon-ngModel="prime_minister" /></div>
+  </div>
+  <br />
+  <div>1-Way: <input type="text" [value]="prime_minister"/></div>
+  <div>1-Way: <input type="text" [value]="prime_minister"/></div>
+  <div>1-Way: <input type="text" bind-value="prime_minister" /></div>
+  <div>2-Way: <input type="text" [(ngModel)]="prime_minister" /></div>
+  <div>2-Way: <input type="text" bindon-ngModel="prime_minister" /></div>
 
+  <div>
+    <button class="btn btn-primary mx-2" [disabled]="flag">Click me</button>
+    <button class="btn btn-primary mx-2" bind-disabled="flag">Click me</button>
+    <button class="btn btn-primary mx-2" disabled={{flag}}>Click me</button>
+  </div>
+
+  <div class="mx-2">
+    <button class="btn btn-success" (click)="f1()">Click me</button>
+  </div>
+
+  <div class="p-2 mx-2">
+    <div>Addition of two numbers:</div>
+    <input [(ngModel)]="num1" />
+    <input [(ngModel)]="num2" />
     <div>
-        <button class="btn btn-primary mx-2" [disabled]="flag">Click me</button>
-        <button class="btn btn-primary mx-2" bind-disabled="flag">Click me</button>
-        <button class="btn btn-primary mx-2" disabled={{flag}}>Click me</button>
+      Addition of two numbers {{ num1 }} and {{ num2 }} is: {{ +num1 + +num2 }}
     </div>
+  </div>
 
-    <div class="mx-2">
-        <button class="btn btn-success" (click)="f1()">Click me</button>
-    </div>
+  <div class="p-2 mx-2">
+    <div>Addition of two numbers using Template Reference:</div>
+    <input #n1 id="val1" />
+    <input #n2 id="val2" />
+    <button class="btn btn-primary" (click)="addNumbers(n1.value, n2.value)">Add</button>
+    <div>Addition result is: {{ addNum }}</div>
+  </div>
 
-    <div class="p-2 mx-2">
-        <div>Addition of two numbers:</div>
-        <input [(ngModel)]="num1" />
-        <input [(ngModel)]="num2" />
-        <div>
-            Addition of two numbers {{ num1 }} and {{ num2 }} is: {{ +num1 + +num2 }}
-        </div>
-    </div>
+  <table>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$80</td>
+    </tr>
+    <tr>
+      <td [attr.colspan]="myColSpanVal">Sum: $180</td>
+    </tr>
+  </table>
 
-    <div class="p-2 mx-2">
-        <div>Addition of two numbers using Template Reference:</div>
-        <input #n1 id="val1" />
-        <input #n2 id="val2" />
-        <button class="btn btn-primary" (click)="addNumbers(n1.value, n2.value)">Add</button>
-        <div>Addition result is: {{ addNum }}</div>
-    </div>
+  <!-- Assignments: -->
 
-    <table>
-        <tr>
-            <th>Month</th>
-            <th>Savings</th>
-        </tr>
-        <tr>
-            <td>January</td>
-            <td>$100</td>
-        </tr>
-        <tr>
-            <td>February</td>
-            <td>$80</td>
-        </tr>
-        <tr>
-            <td [attr.colspan]="myColSpanVal">Sum: $180</td>
-        </tr>
-    </table>
+  <br><br>
 
-    <!-- Assignments: -->
-
-    <br><br>
-
-    <!-- Show/Hide Paragraph -->
-    <button (click)="f2()">Show/Hide</button>
-    <div *ngIf="f">
-        <p>Hello, {{ nm }}!</p>
-    </div>
-
-    <br><br>
-
-    <!-- Textarea with Remaining Characters -->
+  <!-- Show/Hide Paragraph -->
+  <button (click)="f2()">Show/Hide</button>
+  @if (f) {
     <div>
-        <textarea [(ngModel)]="message"></textarea>
-        <p>{{ message }}: {{ max_length - message.length }} characters are left</p>
+      <p>Hello, {{ nm }}!</p>
     </div>
+  }
 
-    <!-- Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph -->
-    <div>
+  <br><br>
+
+  <!-- Textarea with Remaining Characters -->
+  <div>
+    <textarea [(ngModel)]="message"></textarea>
+    <p>{{ message }}: {{ max_length - message.length }} characters are left</p>
+  </div>
+
+  <!-- Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph -->
+  <div>
     <select [(ngModel)]="state">
-        <option>Florida</option>
-        <option>Texas</option>
-        <option>Michigan</option>
+      <option>Florida</option>
+      <option>Texas</option>
+      <option>Michigan</option>
     </select>
 
     <p>Your selected state is : {{state}}</p>
-    </div>
+  </div>
 
-    <!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
-<div class="counter">
+  <!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+  <div class="counter">
     <h2>Counter: {{ count }}</h2>
     <button (click)="increment()">Increment</button>
     <button (click)="decrement()">Decrement</button>
     <button (click)="reset()">Reset</button>
-</div>
+  </div>
 
-<br><br>
+  <br><br>
 
-<div>
+  <div>
     <input [type]="inputType" placeholder="Enter your password">
     <button (click)="toggleInputType()">
-        {{ buttonText }}
+      {{ buttonText }}
     </button>
-</div>
-<br>
+  </div>
+  <br>
 
-<!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+    <!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
 
-<h3>Performing operation b/w two operands with (+,-,*,/)</h3>
+    <h3>Performing operation b/w two operands with (+,-,*,/)</h3>
 
-<div>Input Number 1 : <input type="number" [(ngModel)]="number1"></div>
-<div>Input Number 2 : <input type="number" [(ngModel)]="number2"> </div>
+    <div>Input Number 1 : <input type="number" [(ngModel)]="number1"></div>
+    <div>Input Number 2 : <input type="number" [(ngModel)]="number2"> </div>
 
-<select [(ngModel)]="operator">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
-</select>
-<button (click)="calculate()">=</button>
-<span>{{ result }}</span>
+    <select [(ngModel)]="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <button (click)="calculate()">=</button>
+    <span>{{ result }}</span>
 
-</div>
+  </div>
 
