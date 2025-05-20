@@ -7,7 +7,7 @@
         type="text"
         placeholder="Search by category..."
         [(ngModel)]="byName"
-        (click)="searchByItem()"
+        (input)="searchByItem()"
         class="form-control"
         style="max-width: 300px"
       />
@@ -38,7 +38,10 @@
             </p>
             <p class="card-text">Product Title: {{ products.title }}</p>
             <p class="card-text">Product Price: {{ products.price }}</p>
-            <p class="card-text">Product Rating: {{ products.rating.rate }}</p>
+            <p class="card-text">
+              Product Rating: {{ products.rating.rate }}
+              <fa-icon [icon]="fastar"></fa-icon>
+            </p>
             <p class="card-text text-truncate">
               Product Description: {{ products.description }}
             </p>

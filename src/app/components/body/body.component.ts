@@ -3,6 +3,7 @@ import { DatabindingComponent } from "../databinding/databinding.component";
 import { DirectivesComponent } from "../directives/directives.component";
 import { UsersComponent } from '../users/users.component';
 import { ProductsComponent } from '../products/products.component';
+import { MyModelComponent } from "../my-model/my-model.component";
 
 @Component({
   selector: 'app-body',
@@ -11,6 +12,9 @@ import { ProductsComponent } from '../products/products.component';
     // DirectivesComponent
     // UsersComponent
     ProductsComponent
+    // MyModelComponent
+    ,
+    MyModelComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

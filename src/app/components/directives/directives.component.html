@@ -157,3 +157,42 @@
     </datalist>
   </div>
 </div>
+<div class="border p-2 m-2">
+  <div>Understanding of ngSTyle</div>
+  <input type="number" [(ngModel)]="num" />
+  <p [style.color]="num % 2 == 0 ? 'red' : 'green'">Add colour dynamically</p>
+  <p [style.fontSize.px]="num % 2 == 0 ? 48 : 24">Add style unit</p>
+  <p [style.background-color]="num % 2 == 0 ? 'green' : 'yellow'">
+    Add bg color dynamically
+  </p>
+  <p [ngStyle]="num % 2 == 0 ? mystyle1 : mystyle2">
+    NgStyle for multiple values
+  </p>
+  <p [ngStyle]="myfunc()">Ng Style for mutliple values</p>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Understanding of ngClass</div>
+
+  <input type="number" [(ngModel)]="num" />
+
+  <button [ngClass]="['btn', num % 2 == 0 ? 'btn-success' : 'btn-danger']">
+    Click
+  </button>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Understanding of ng-template</div>
+  <div *ngIf="num % 2 == 0; else oddNumber">Even</div>
+  <ng-template #oddNumber> Odd </ng-template>
+</div>
+
+<div class="border p-2 m-2">
+  <div>Understanding of ng-template</div>
+  <ng-container *ngFor="let num of numbers">
+    <div *ngIf="num % 2 === 0">{{ num }} is Even</div>
+    <ng-template [ngIf]="num % 2 !== 0">
+      <div>{{ num }} is Odd</div>
+    </ng-template>
+  </ng-container>
+</div>
