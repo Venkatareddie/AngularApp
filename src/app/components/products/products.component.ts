@@ -4,11 +4,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { ZoominDirective } from '../../directives/zoomin.directive';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NgxPaginationModule, FormsModule,FontAwesomeModule],
+  imports: [NgxPaginationModule, FormsModule,FontAwesomeModule,ZoominDirective],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
 })

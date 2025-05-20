@@ -1,14 +1,13 @@
-
 import { CommonModule, NgClass, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-
+import { HighletdirectiveDirective } from '../../directives/highletdirective.directive';
+import { NumberonlyDirective } from '../../directives/numberonly.directive';
 
 @Component({
   selector: 'app-directives',
   standalone: true,
-  imports: [FormsModule,NgStyle,NgClass,CommonModule],
+  imports: [FormsModule,NgStyle,NgClass,CommonModule,HighletdirectiveDirective,NumberonlyDirective],
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.css'
 })

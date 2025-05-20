@@ -24,31 +24,29 @@
       @for (products of productsArr | paginate: { itemsPerPage: 4, currentPage:
       p}; track $index) {
       <div class="col-sm-3">
-        <div class="card text-center">
+        <div class="card text-center h-100">
           <img
             src="{{ products.image }}"
-            class="card-img-top"
-            alt="..."
-            height="200px"
+            class="card-img-top fixed-size-img"
+            alt="Product Image"
           />
-          <div class="card-body">
+          <div class="card-body fixed-card-body" zoomin>
             <h5 class="card-title">{{ products.category }}</h5>
+            <p class="card-text">{{ products.id }}</p>
+            <p class="card-text">Title: {{ products.title }}</p>
+            <p class="card-text">Price: {{ products.price }}</p>
             <p class="card-text">
-              {{ products.id }}
-            </p>
-            <p class="card-text">Product Title: {{ products.title }}</p>
-            <p class="card-text">Product Price: {{ products.price }}</p>
-            <p class="card-text">
-              Product Rating: {{ products.rating.rate }}
+              Rating: {{ products.rating.rate }}
               <fa-icon [icon]="fastar"></fa-icon>
             </p>
-            <p class="card-text text-truncate">
-              Product Description: {{ products.description }}
+            <p class="card-text card-description text-truncate">
+              {{ products.description }}
             </p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>
+
       }
     </div>
     <div class="row">

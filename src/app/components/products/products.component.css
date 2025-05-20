@@ -1,0 +1,10 @@
+div.card-body{
+    background-color: aquamarine;
+}
+.fixed-size-img {
+    width: 100%;
+    /* Makes it span full card width */
+    height: 200px;
+    /* Fixed height for uniformity */
+    object-fit: cover;
+    /* Crop the image to fill the box without distortion */ }
