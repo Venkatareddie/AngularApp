@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import Swal from 'sweetalert2';
-import { faPencil, faTrash, faEye, faPlusSquare} from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faTrash, faEye, faPlusSquare, faUser} from '@fortawesome/free-solid-svg-icons';
 import Snackbar from 'awesome-snackbar';
-import { EMPLOYEE_ADDED_MESSAGE } from '../../constants/message_constants';
+import { edited_message, EMPLOYEE_ADDED_MESSAGE, found_duplicate, emplty_invalid_input} from '../../constants/message_constants';
+
 
 
 
@@ -28,7 +29,8 @@ export class EmployeeCRUDComponent {
   faPencil = faPencil
   faTrash = faTrash
   faEye = faEye
-  faPlusSquare=faPlusSquare
+  faPlusSquare = faPlusSquare
+  faUser=faUser
   
   //logic for view the deleting the employee
 
@@ -63,7 +65,7 @@ export class EmployeeCRUDComponent {
     });
     Toast.fire({
       icon: "success",
-      title: "Edited successfully"
+      title: edited_message
     });
   }
 
@@ -74,10 +76,20 @@ export class EmployeeCRUDComponent {
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "Record Already Found!! Please Choose Unique Id",
+        title: found_duplicate,
         showConfirmButton: false,
         timer: 1500
       });
+  }
+
+  fieldsMustPresent() {
+    Swal.fire({
+      position: "top-end",
+      icon: "warning",
+      title: emplty_invalid_input,
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
   
   //Snackbar  when employee added into the employee object.
@@ -101,7 +113,7 @@ export class EmployeeCRUDComponent {
     
       // Check for empty or invalid inputs
       if (!idInput || !name || !department || !salaryInput || isNaN(id) || isNaN(salary)) {
-        alert("All fields are required and must be valid. Please try again.");
+        this.fieldsMustPresent();
         return;
       }
     
