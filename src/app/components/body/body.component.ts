@@ -7,6 +7,7 @@ import { MyModelComponent } from "../my-model/my-model.component";
 import { DemoComponent } from "../demo/demo.component";
 import { ZoominDirective } from '../../directives/zoomin.directive';
 import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component';
+import { PipesComponent } from '../pipes/pipes.component';
 
 
 @Component({
@@ -18,7 +19,9 @@ import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component'
     // ProductsComponent,
     // MyModelComponent,
     // DemoComponent
-    EmployeeCRUDComponent
+    // EmployeeCRUDComponent
+    PipesComponent
+    
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
