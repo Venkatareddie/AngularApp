@@ -8,20 +8,15 @@ import { DemoComponent } from "../demo/demo.component";
 import { ZoominDirective } from '../../directives/zoomin.directive';
 import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component';
 import { PipesComponent } from '../pipes/pipes.component';
+import { ParentComponent } from "../parent/parent.component";
+import { CategoriesComponent } from "../categories/categories.component";
+import { ParentEmployeeComponent } from "../parent-employee/parent-employee.component";
 
 
 @Component({
   selector: 'app-body',
   imports: [
-    // DatabindingComponent,
-    // DirectivesComponent, 
-    // UsersComponent,
-    // ProductsComponent,
-    // MyModelComponent,
-    // DemoComponent
-    // EmployeeCRUDComponent
-    PipesComponent
-    
+    ParentEmployeeComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

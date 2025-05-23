@@ -1,0 +1,25 @@
+<div class="container border border-5 p-2 m-3 text-center">
+  <div>This is a parent component</div>
+  <div>My own data a is :{{ a }}</div>
+  <div>My child component date username is {{ child1.username }}</div>
+  <div>My child2 address is {{ addressParent }}</div>
+  <div>Phone number from child1 is : {{ phoneParent }}</div>
+  <div>Chils2 email is : {{ child2email.email }}</div>
+  <div class="row">
+    <div class="col-sm-6 border border-5">
+      <app-child1
+        [a]="a"
+        #child1
+        (phoneEvent)="recievingPhone($event)"
+      ></app-child1>
+    </div>
+    <div class="col-sm-6 border border-5">
+      <app-child2
+        [b]="a"
+        [child2_username]="child1.username"
+        (addEvent)="recievedFromParent($event)"
+        #child2email
+      ></app-child2>
+    </div>
+  </div>
+</div>

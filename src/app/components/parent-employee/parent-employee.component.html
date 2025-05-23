@@ -1,0 +1,7 @@
+<app-child1-employee
+  [employees]="employees()"
+  (delete)="deleteEmployee($event)"
+>
+</app-child1-employee>
+
+<app-child2-employee (add)="addEmployee($event)"></app-child2-employee>

@@ -37,7 +37,7 @@ export class PipesComponent {
   
   roman_numbers = [1, 4, 9, 12, 40, 58, 1999, 2023];
 
-  bdy: string = '';
+  bdy: Date = new Date("");
 
    employees = [
     { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },

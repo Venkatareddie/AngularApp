@@ -1,0 +1,23 @@
+<h3>Employee Table</h3>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Salary</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (emp of employees; track emp) {
+    <tr>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.salary }}</td>
+      <td>
+        <button (click)="delete.emit(employees.indexOf(emp))">Delete</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
