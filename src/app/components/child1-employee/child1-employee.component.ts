@@ -5,13 +5,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   imports: [],
   templateUrl: './child1-employee.component.html',
   styleUrl: './child1-employee.component.css',
-  inputs:['employees']
+  inputs: ['employees'],
+  outputs:['delete']
   
 })
 export class Child1EmployeeComponent {
   employees: any[] = [];
- // @Input() employees: any[] = [];
-  @Output() delete = new EventEmitter<number>();
+  delete = new EventEmitter<number>();
 
 }
 

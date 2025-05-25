@@ -1,13 +1,22 @@
-<h3>Employee Add</h3>
+<h3>Add Employee</h3>
+
 <form (ngSubmit)="submit()">
-  <input [(ngModel)]="name" name="name" placeholder="Name" required />
-  <input [(ngModel)]="gender" name="gender" placeholder="Gender" required />
-  <input
-    [(ngModel)]="salary"
-    name="salary"
-    placeholder="Salary"
-    type="number"
-    required
-  />
-  <button type="submit">Add</button>
+  <div>
+    <label>Name:</label><br />
+    <input [(ngModel)]="name" name="name" required />
+  </div>
+
+  <div>
+    <label>Gender:</label><br />
+    <input [(ngModel)]="gender" name="gender" required />
+  </div>
+
+  <div>
+    <label>Salary:</label><br />
+    <input [(ngModel)]="salary" name="salary" type="number" required />
+  </div>
+
+  <div style="margin-top: 10px">
+    <button type="submit">Add</button>
+  </div>
 </form>

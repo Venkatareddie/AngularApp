@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Child1EmployeeComponent } from '../child1-employee/child1-employee.component';
 import { Child2EmployeeComponent } from '../child2-employee/child2-employee.component';
@@ -11,17 +11,19 @@ import { Child2EmployeeComponent } from '../child2-employee/child2-employee.comp
   styleUrls: ['./parent-employee.component.css']
 })
 export class ParentEmployeeComponent {
-  employees = signal([
-    { name: 'John', gender: 'Male', salary: 50000 }
-  ]);
+  employees = [
+    { name: 'Venkat', gender: 'Male', salary: 50000 },
+    { name: 'Swathi', gender: 'Female', salary: 90000 },
+    { name: 'Vijay', gender: 'Male', salary: 35000 }
+  ];
 
   deleteEmployee(index: number) {
-    const updated = [...this.employees()];
-    updated.splice(index, 1);
-    this.employees.set(updated);
+    this.employees.splice(index, 1);
+    this.employees = [...this.employees];
   }
 
   addEmployee(emp: any) {
-    this.employees.update((e: any[]) => [...e, emp]);
+    this.employees.push(emp);
+    this.employees = [...this.employees];
   }
 }

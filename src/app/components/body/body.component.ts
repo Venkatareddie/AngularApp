@@ -11,12 +11,18 @@ import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from "../parent/parent.component";
 import { CategoriesComponent } from "../categories/categories.component";
 import { ParentEmployeeComponent } from "../parent-employee/parent-employee.component";
+import { Math1Component } from "../math1/math1.component";
+import { Math2Component } from "../math2/math2.component";
+import { EmployeeComponent } from "../employee/employee.component";
 
 
 @Component({
   selector: 'app-body',
   imports: [
-    ParentEmployeeComponent
+    // ParentEmployeeComponent,
+    Math1Component,
+    Math2Component,
+    EmployeeComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

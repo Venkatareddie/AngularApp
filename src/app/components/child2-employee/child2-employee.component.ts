@@ -1,14 +1,17 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-child2-employee',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './child2-employee.component.html',
-  styleUrl: './child2-employee.component.css'
+  styleUrls: ['./child2-employee.component.css'],
+  outputs: ['add']  
 })
 export class Child2EmployeeComponent {
-  @Output() add = new EventEmitter<any>();
+
+  add = new EventEmitter<any>();
 
   name = '';
   gender = '';
@@ -22,5 +25,4 @@ export class Child2EmployeeComponent {
       this.salary = null;
     }
   }
-
 }

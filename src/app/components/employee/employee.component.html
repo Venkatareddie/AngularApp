@@ -1,0 +1,28 @@
+<h3>Employee List</h3>
+
+<select [(ngModel)]="selectedType" (change)="onTypeChange()">
+  <option value="all">All Employees</option>
+  <option value="male">Male Employees</option>
+  <option value="female">Female Employees</option>
+</select>
+
+<table class="table table-border table-striped">
+  <thead class="table-info">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (emp of displayedEmployees; track emp.eId) {
+    <tr>
+      <td>{{ emp.eId }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.sal }}</td>
+      <td>{{ emp.gender }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
