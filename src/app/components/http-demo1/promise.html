@@ -1,0 +1,8 @@
+<script>
+  user_url = "https://jsonplaceholder.typicode.com/users";
+  let userPromise = fetch(user_url).then((response) => {
+    response.json().then((finalResponse) => {
+      console.log(finalResponse);
+    });
+  });
+</script>

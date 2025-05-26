@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "1459",
+      "userId": "106",
+      "userName": "Venkat",
+      "age": 25,
+      "email": "venkat@gmail.com",
+      "phoneNumber": "3144865243"
+    },
+    {
+      "id": "f39d",
+      "userId": "103",
+      "userName": "Ram Krishna",
+      "age": 25,
+      "email": "Ram@gmail.com",
+      "phoneNumber": "+91 9133065852"
+    },
+    {
+      "id": "27e9",
+      "userId": "101",
+      "userName": "James",
+      "age": 32,
+      "email": "james@gmail.com",
+      "phoneNumber": "2139872344"
+    },
+    {
+      "id": "8311",
+      "userId": "102",
+      "userName": "John",
+      "age": 38,
+      "email": "john@gmail.com",
+      "phoneNumber": "9828392893"
+    }
+  ]
+}

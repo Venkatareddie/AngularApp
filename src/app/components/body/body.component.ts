@@ -14,15 +14,14 @@ import { ParentEmployeeComponent } from "../parent-employee/parent-employee.comp
 import { Math1Component } from "../math1/math1.component";
 import { Math2Component } from "../math2/math2.component";
 import { EmployeeComponent } from "../employee/employee.component";
+import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
+import { UsercurdComponent } from "../usercurd/usercurd.component";
 
 
 @Component({
   selector: 'app-body',
   imports: [
-    // ParentEmployeeComponent,
-    Math1Component,
-    Math2Component,
-    EmployeeComponent
+    UsercurdComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
