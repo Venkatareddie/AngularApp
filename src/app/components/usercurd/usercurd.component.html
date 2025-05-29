@@ -5,7 +5,7 @@
 @if (isLoading) {
 <div class="d-flex justify-content-center my-4">
   <img
-    src="assets/loading-spinner.gif"
+    src="https://i.etsystatic.com/16237790/r/il/591da5/5840470695/il_fullxfull.5840470695_gwx4.jpg"
     alt="Loading..."
     style="width: 50px; height: 50px"
     class="spinner-border"
@@ -13,7 +13,6 @@
 </div>
 } @else {
 <div class="container mb-5" style="max-width: 450px">
-  <h5 class="mb-3">User Form</h5>
   <form
     (ngSubmit)="editMode ? updateUser() : addUser()"
     #userForm="ngForm"

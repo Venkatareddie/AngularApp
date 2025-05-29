@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th>
+      <th>Fullname</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (employees of AllEmployees; track $index) {
+    <tr>
+      <td>{{ employees.id }}</td>
+      <td>{{ employees.lastName }} {{ employees.firstName }}</td>
+      <td>{{ employees.email }}</td>
+      <td>{{ employees.gender }}</td>
+      <td>{{ employees.sal }}</td>
+    </tr>
+    }
+  </tbody>
+</table>

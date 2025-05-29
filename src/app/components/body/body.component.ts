@@ -16,12 +16,16 @@ import { Math2Component } from "../math2/math2.component";
 import { EmployeeComponent } from "../employee/employee.component";
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { UsercurdComponent } from "../usercurd/usercurd.component";
+import { HttpDemo2Component } from '../http-demo2/http-demo2.component';
+import { Observabledemo1Component } from '../../componets/observabledemo1/observabledemo1.component';
 
 
 @Component({
   selector: 'app-body',
   imports: [
-    UsercurdComponent
+    // UsercurdComponent
+    // HttpDemo2Component,
+    Observabledemo1Component
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
