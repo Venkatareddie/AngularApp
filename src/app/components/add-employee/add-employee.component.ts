@@ -14,22 +14,28 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddEmployeeComponent {
 
-  id: number = 0;
+  id: number | null = null;
   name: string = '';
-  salary: number = 0;
+  salary: number | null = null;
 
-  constructor(private employeeService: EmpService) {}
+  constructor(private empService: EmpService) {}
 
   addEmployee() {
-    const newEmployee: EmployeeModel = {
+    if (!this.name.trim() || !this.id || !this.salary) {
+      alert('Please enter valid employee details.');
+      return;
+    }
+
+    this.empService.addEmployee({
       id: this.id,
-      name: this.name,
+      name: this.name.trim(),
       salary: this.salary
-    };
-    this.employeeService.addEmployee(newEmployee);
-    this.id;
+    });
+
+    // Reset form inputs (will show empty fields)
+    this.id = null;
     this.name = '';
-    this.salary;
+    this.salary = null;
   }
 
 }
