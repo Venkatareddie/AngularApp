@@ -1,0 +1,37 @@
+<div class="m-3 p-3 border rounded shadow-sm">
+  <h3 class="mb-3">Employee List</h3>
+
+  @if (employees.length > 0) {
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees; track emp.id) {
+      <tr>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.salary }}</td>
+        <td>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteEmployee(emp.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+  <button class="btn btn-warning mt-2" (click)="clearAll()">Clear All</button>
+  } @else {
+  <p>No employees available.</p>
+  }
+</div>

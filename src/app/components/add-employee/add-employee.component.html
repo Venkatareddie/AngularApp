@@ -1,0 +1,36 @@
+<div class="border p-3 m-3 rounded shadow-sm" style="width: 300px">
+  <h4 class="mb-3 text-center">Add Employee</h4>
+
+  <div class="mb-2">
+    <input
+      type="number"
+      [(ngModel)]="id"
+      placeholder="Enter ID"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-2">
+    <input
+      type="text"
+      [(ngModel)]="name"
+      placeholder="Enter Name"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <input
+      type="number"
+      [(ngModel)]="salary"
+      placeholder="Enter Salary"
+      class="form-control"
+    />
+  </div>
+
+  <div class="text-center">
+    <button (click)="addEmployee()" class="btn btn-primary">
+      Add Employee
+    </button>
+  </div>
+</div>
