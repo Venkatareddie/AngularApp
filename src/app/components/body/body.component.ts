@@ -21,6 +21,10 @@ import { Observabledemo1Component } from '../../componets/observabledemo1/observ
 import { ObservableDemo2Component } from '../../component/observable-demo2/observable-demo2.component';
 import { AddEmployeeComponent } from "../add-employee/add-employee.component";
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
+import { FormDemo1Component } from "../form-demo1/form-demo1.component";
+import { FormDemo2Component } from "../form-demo2/form-demo2.component";
+import { FormDemo3Component } from "../form-demo3/form-demo3.component";
+import { RegistrationFormComponent } from "../registration-form/registration-form.component";
 
 
 @Component({
@@ -30,8 +34,12 @@ import { EmployeeListComponent } from '../employee-list/employee-list.component'
     // HttpDemo2Component,
     // Observabledemo1Component
     // ObservableDemo2Component,
-    AddEmployeeComponent,
-    EmployeeListComponent
+    // AddEmployeeComponent,
+    // EmployeeListComponent,
+    // FormDemo1Component,
+    FormDemo2Component,
+    FormDemo3Component,
+    RegistrationFormComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
